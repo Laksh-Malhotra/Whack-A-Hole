@@ -52,7 +52,7 @@ const app = function () {
   setTimeout(() => {
     timeUp = true;
     restartBtn.disabled = false;
-  }, 10000);
+  }, 30000);
   peep();
 };
 

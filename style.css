@@ -103,8 +103,15 @@ body {
   .start,
   .restart {
     position: fixed;
-    bottom: 0;
+    bottom: 0.5rem;
+  }
+
+  .start {
     left: 40%;
+  }
+
+  .restart {
+    left: 45%;
   }
 
   .heading-2 {
@@ -129,7 +136,14 @@ body {
   .start,
   .restart {
     position: fixed;
-    bottom: 0;
+    bottom: 0.5rem;
+  }
+
+  .start {
     left: 33.33%;
+  }
+
+  .restart {
+    left: 43.33%;
   }
 }
