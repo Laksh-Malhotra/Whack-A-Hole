@@ -1,4 +1,4 @@
-## Whack-A-Hole Game.
+## Whack-A-Mole Game.
 
 This game is live on https://whack-a-hole.netlify.app
 

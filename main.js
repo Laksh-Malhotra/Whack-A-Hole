@@ -57,7 +57,8 @@ const app = function () {
 };
 
 // To start game
-const startGame = function () {
+const startGame = function (e) {
+  if (e.target.classList.contains("social")) return;
   startBtn.style.display = "none";
   restartBtn.style.display = "block";
   app();
