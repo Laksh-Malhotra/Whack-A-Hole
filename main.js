@@ -9,7 +9,6 @@ let lastHole;
 let timeUp = false;
 let score = 0;
 Highscore.textContent = localStorage.getItem("Highscore") || 0;
-var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
 // To disable when game is running
 restartBtn.disabled = true;
@@ -59,7 +58,6 @@ const app = function () {
 
 // To start game
 const startGame = function (e) {
-  console.log(e.type);
   if (e.target.classList.contains("social")) return;
   startBtn.style.display = "none";
   restartBtn.style.display = "block";
@@ -69,7 +67,6 @@ const startGame = function (e) {
 // To restart game
 const restartGame = function () {
   restartBtn.disabled = true;
-  console.log("Restart");
   app();
 };
 
@@ -84,14 +81,8 @@ const maintainScore = function (e) {
 };
 
 // Event Handler
-if (isIOS) {
-  window.addEventListener("touchstart", startGame, {
-    once: true,
-  });
-} else {
-  window.addEventListener("click", startGame, {
-    once: true,
-  });
-}
+window.addEventListener("click", startGame, {
+  once: true,
+});
 restartBtn.addEventListener("click", restartGame);
 moles.forEach((mole) => mole.addEventListener("click", maintainScore));
