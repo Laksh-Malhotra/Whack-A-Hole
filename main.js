@@ -9,7 +9,11 @@ let lastHole;
 let timeUp = false;
 let score = 0;
 Highscore.textContent = localStorage.getItem("Highscore") || 0;
-
+const device = navigator.userAgent;
+if (device.includes("iPhone")) {
+  startBtn.textContent = "";
+  startBtn.textContent = "Tap here to start !!!";
+}
 // To disable when game is running
 restartBtn.disabled = true;
 
@@ -81,8 +85,12 @@ const maintainScore = function (e) {
 };
 
 // Event Handler
-window.addEventListener("click", startGame, {
-  once: true,
-});
+device.includes("iPhone")
+  ? startBtn.addEventListener("click", startGame, {
+      once: true,
+    })
+  : window.addEventListener("click", startGame, {
+      once: true,
+    });
 restartBtn.addEventListener("click", restartGame);
 moles.forEach((mole) => mole.addEventListener("click", maintainScore));
